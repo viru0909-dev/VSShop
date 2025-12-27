@@ -32,6 +32,10 @@ This project serves as a comprehensive demo for high-end freelancing capabilitie
 
 ## 📦 Getting Started
 
+### Directory Structure
+- **frontend/**: The React + Vite application.
+- **backend/**: The Spring Boot application.
+
 ### Prerequisites
 - Node.js (v18+)
 - Java JDK (v17+)
@@ -47,12 +51,16 @@ This project serves as a comprehensive demo for high-end freelancing capabilitie
 
 2. **Frontend Setup**
    ```bash
+   cd frontend
    npm install
    npm run dev
    ```
 
 3. **Backend Setup**
-   *(Instructions to be added upon backend initialization)*
+   ```bash
+   cd backend
+   ./mvnw spring-boot:run
+   ```
 
 ## 🤝 Contribution
 This project is currently in active development.
