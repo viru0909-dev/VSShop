@@ -20,7 +20,7 @@ const ConsumerDashboard = () => {
     ]);
 
     return (
-        <div className="min-h-screen bg-black text-gray-100 font-sans selection:bg-indigo-500 selection:text-white overflow-hidden relative">
+        <div className="min-h-screen bg-gradient-to-br from-blue-900 via-violet-900 to-gray-900 text-gray-100 font-sans selection:bg-indigo-500 selection:text-white overflow-hidden relative">
             {/* Background Gradients */}
             <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-900/30 rounded-full blur-[120px]"></div>
