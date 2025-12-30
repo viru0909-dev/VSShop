@@ -1,7 +1,1 @@
-/* Reset defaults that interfere with full-screen layouts */
-#root {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
+/* App-specific styles can go here if needed */
