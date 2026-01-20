@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+
 
 const ConsumerDashboard = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate(); // Unused
 
     // Mock Data
     const [user] = useState({
