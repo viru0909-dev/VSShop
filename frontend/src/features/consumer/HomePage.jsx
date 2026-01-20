@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ShoppingBag, ShoppingCart, User, Search, Star, TrendingUp, Package, Heart, LogOut, ChevronRight, Bell, Grid, LayoutGrid, Filter, Plus } from 'lucide-react';
 import { productsAPI } from '../../lib/api';
-import { getProductImage, getProductCardHeight } from '../../lib/productImages';
+import { getProductImage } from '../../lib/productImages';
 import useAuthStore from '../../store/authStore';
 
 const HomePage = () => {
     const navigate = useNavigate();
-    const { isAuthenticated, user, logout } = useAuthStore();
+    const { user, logout } = useAuthStore();
 
     // Fetch featured products from API
     const { data: featuredProducts = [], isLoading } = useQuery({

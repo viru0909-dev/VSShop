@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 import { X, Upload, Image as ImageIcon, Plus, Trash2, Maximize2 } from 'lucide-react';
 
 const ProductStackModal = ({ isOpen, onClose, product, isEditing = false, onSave }) => {
-    const [images, setImages] = useState(product?.images || []);
+    const [images] = useState(product?.images || []);
+
     const [activeImage, setActiveImage] = useState(0);
     const [formData, setFormData] = useState({
         name: product?.name || '',
@@ -12,19 +14,8 @@ const ProductStackModal = ({ isOpen, onClose, product, isEditing = false, onSave
         stock: product?.stock || 0
     });
 
-    // Reset form when product changes
-    useEffect(() => {
-        if (isOpen) {
-            setFormData({
-                name: product?.name || '',
-                price: product?.price || '',
-                category: product?.category || 'Dresses',
-                description: product?.description || '',
-                stock: product?.stock || 0
-            });
-            setImages(product?.images || []);
-        }
-    }, [isOpen, product]);
+    // Reset form logic moved to parent conditional rendering
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;

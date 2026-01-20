@@ -10,7 +10,8 @@ const SellerDashboard = () => {
     const { user, logout } = useAuthStore();
 
     // State for grid density preference: 'compact' | 'spacious'
-    const [gridDensity, setGridDensity] = useState('spacious');
+    // State for grid density preference: 'compact' | 'spacious'
+    // const [gridDensity, setGridDensity] = useState('spacious'); // Removed unused state
 
     // Modal State
     const [isStackOpen, setStackOpen] = useState(false);
@@ -223,7 +224,7 @@ const SellerDashboard = () => {
 
                         {/* Dynamic Masonry Logic using CSS Columns with NATURAL image heights */}
                         <div className={`columns-1 md:columns-2 lg:columns-4 gap-6 space-y-6`}>
-                            {products.map((product, index) => {
+                            {products.map((product) => {
                                 return (
                                     <div
                                         key={product.id}
@@ -259,13 +260,15 @@ const SellerDashboard = () => {
             </div>
 
             {/* Product Stack Modal */}
-            <ProductStackModal
-                isOpen={isStackOpen}
-                onClose={() => setStackOpen(false)}
-                product={selectedProduct}
-                isEditing={!!selectedProduct}
-                onSave={handleStackSave}
-            />
+            {isStackOpen && (
+                <ProductStackModal
+                    isOpen={isStackOpen}
+                    onClose={() => setStackOpen(false)}
+                    product={selectedProduct}
+                    isEditing={!!selectedProduct}
+                    onSave={handleStackSave}
+                />
+            )}
         </div>
     );
 };
